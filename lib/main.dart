@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:insight/Constants/Color.dart';
 import 'package:insight/views/Home_Page.dart';
 import 'package:insight/views/Search%20_Page.dart';
+import 'package:insight/views/auth/Sign_Up.dart';
+import 'package:insight/views/auth/Sign_in.dart';
 
 void main() {
   runApp(MyApp());
@@ -65,7 +67,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                   label: '')
             ]),
-        body: PageList[_index],
+        body: Sign_In(),
       ),
     );
   }
