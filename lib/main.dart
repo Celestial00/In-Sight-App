@@ -19,6 +19,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int _index = 0;
   final List PageList = [const HomePage(), const SearchPage()];
+  bool isSignedIn = false;
 
   void ChangePage(int index) {
     setState(() {
@@ -67,7 +68,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                   label: '')
             ]),
-        body: Sign_In(),
+        body: HomePage(),
       ),
     );
   }
