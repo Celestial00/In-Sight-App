@@ -4,6 +4,7 @@ import 'package:insight/views/Home_Page.dart';
 import 'package:insight/views/Search%20_Page.dart';
 import 'package:insight/views/auth/Sign_Up.dart';
 import 'package:insight/views/auth/Sign_in.dart';
+import 'package:insight/views/holder_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _index = 0;
-  final List PageList = [const HomePage(), const SearchPage()];
+  final List PageList = [HolderPage(), const SearchPage()];
   bool isSignedIn = false;
 
   void ChangePage(int index) {
@@ -68,7 +69,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                   label: '')
             ]),
-        body: HomePage(),
+        body: HolderPage(),
       ),
     );
   }
