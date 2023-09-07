@@ -12,7 +12,7 @@ class Article_Button extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.only(left: 10, top: 10),
         child: Container(
-          width: 350,
+          width: 430,
           height: 40,
           decoration: BoxDecoration(
               color: Colors.black, borderRadius: BorderRadius.circular(10)),

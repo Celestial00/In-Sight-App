@@ -13,127 +13,245 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  double Xoffset = 0;
-  double Yoffset = 0;
-  double ScaleFactor = 1;
-  bool isDrawerOpen = false;
+  GlobalKey<ScaffoldState> _ScaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: Duration(milliseconds: 250),
-      transform: Matrix4.translationValues(Xoffset, Yoffset, 0)
-        ..scale(ScaleFactor),
-      child: ClipRRect(
-        borderRadius: isDrawerOpen == true
-            ? BorderRadius.circular(0)
-            : BorderRadius.circular(50.0),
-        child: Scaffold(
-            backgroundColor: BackGround_Color,
-            body: CustomScrollView(
-              slivers: [
-                SliverAppBar(
-                  backgroundColor: BackGround_Color,
-                  leading: isDrawerOpen == true
-                      ? IconButton(
-                          onPressed: () {
-                            setState(() {
-                              Xoffset = 230;
-                              Yoffset = 130;
-                              ScaleFactor = 0.6;
-                              isDrawerOpen = false;
-                            });
-                          },
-                          icon: Icon(
-                            Icons.menu,
-                            color: Colors.black,
-                          ))
-                      : IconButton(
-                          color: Colors.black,
-                          onPressed: () {
-                            setState(() {
-                              Xoffset = 0;
-                              Yoffset = 0;
-                              ScaleFactor = 1;
-                              isDrawerOpen = true;
-                            });
-                          },
-                          icon: Icon(
-                            Icons.arrow_back_ios,
-                            color: Colors.black,
+    return Scaffold(
+        key: _ScaffoldKey,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: Sec_Color,
+          child: Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
+        ),
+        drawer: Drawer(
+            backgroundColor: Sec_Color,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(top: 60, left: 40),
+                  child: Container(
+                    width: 60,
+                    height: 60,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/dp.jpg'),
+                            fit: BoxFit.cover),
+                        borderRadius: BorderRadius.circular(50)),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 30),
+                  child: ListTile(
+                    titleAlignment: ListTileTitleAlignment.center,
+                    title: Text(
+                      "Name",
+                      style: TextStyle(
+                          fontFamily: 'Nunito',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: Colors.white),
+                    ),
+                    subtitle: Text(
+                      "@User_Name",
+                      style: TextStyle(
+                          fontFamily: 'Nunito',
+                          fontSize: 16,
+                          color: Colors.white),
+                    ),
+                  ),
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 40, top: 20),
+                      child: Column(
+                        children: [
+                          Text(
+                            "20",
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: 'Nunito',
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
                           ),
-                        ),
-                  actions: [
-                    Stack(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 18, vertical: 18),
-                          child: Icon(
-                            Icons.notifications,
-                            color: Sec_Color,
+                          Text("Followers",
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  fontFamily: 'Nunito',
+                                  color: Colors.white))
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 40, top: 20),
+                      child: Column(
+                        children: [
+                          Text(
+                            "20",
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: 'Nunito',
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
                           ),
-                        ),
-                        Positioned(
-                          bottom: 29,
-                          right: 22,
-                          child: Container(
-                            width: 6.5,
-                            height: 6.5,
-                            decoration: BoxDecoration(
-                                color: btn_Color,
-                                borderRadius: BorderRadius.circular(50)),
-                          ),
-                        )
-                      ],
-                    )
+                          Text("Following",
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  fontFamily: 'Nunito',
+                                  color: Colors.white))
+                        ],
+                      ),
+                    ),
                   ],
                 ),
-                SliverToBoxAdapter(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(left: 25, bottom: 10, top: 10),
-                        child: Text(
-                          "In-Sight",
-                          style: TextStyle(
-                              fontFamily: "Nunito",
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      Tags_line(),
-
-                      ArticleCard(),
-                      ArticleCard(),
-                      ArticleCard(),
-                      ArticleCard(),
-                      ArticleCard(),
-                      ArticleCard(),
-                      ArticleCard(),
-                      ArticleCard(),
-                      ArticleCard(),
-                      ArticleCard(),
-                      ArticleCard(),
-                      ArticleCard(),
-                      ArticleCard(),
-                      // Expanded(
-                      //   child: Padding(
-                      //     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
-                      //     child: ListView(
-                      //       children: [
-
-                      //       ],
-                      //     ),
-                      //   ),
-                      // )
-                    ],
+                Divider(),
+                Padding(
+                  padding: EdgeInsets.only(left: 30),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      "Add Articles",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: 'Nunito',
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 30),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.article,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      "Your Articles",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: 'Nunito',
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 30),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.subscriptions,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      "Subscriptions",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: 'Nunito',
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 30),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.logout,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      "Log Out",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: 'Nunito',
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
                   ),
                 ),
               ],
             )),
-      ),
-    );
+        backgroundColor: BackGround_Color,
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              backgroundColor: BackGround_Color,
+              leading: IconButton(
+                  onPressed: () {
+                    _ScaffoldKey.currentState!.openDrawer();
+                  },
+                  icon: Icon(
+                    Icons.menu,
+                    color: Colors.black,
+                  )),
+              actions: [
+                Stack(
+                  children: [
+                    Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 18, vertical: 18),
+                      child: Icon(
+                        Icons.notifications,
+                        color: Sec_Color,
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 29,
+                      right: 22,
+                      child: Container(
+                        width: 6.5,
+                        height: 6.5,
+                        decoration: BoxDecoration(
+                            color: btn_Color,
+                            borderRadius: BorderRadius.circular(50)),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+            SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 25, bottom: 10, top: 10),
+                    child: Text(
+                      "In-Sight",
+                      style: TextStyle(
+                          fontFamily: "Nunito",
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Tags_line(),
+                  ArticleCard(),
+                  ArticleCard(),
+                  ArticleCard(),
+                  ArticleCard(),
+                  ArticleCard(),
+                  ArticleCard(),
+                  ArticleCard(),
+                  ArticleCard(),
+                  ArticleCard(),
+                  ArticleCard(),
+                  ArticleCard(),
+                  ArticleCard(),
+                  ArticleCard(),
+                ],
+              ),
+            ),
+          ],
+        ));
   }
 }
