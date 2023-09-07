@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                   label: '')
             ]),
-        body: SettingsPage(),
+        body: PageList[_index],
       ),
     );
   }
