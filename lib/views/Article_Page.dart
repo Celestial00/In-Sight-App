@@ -27,7 +27,7 @@ class _ArticlePageState extends State<ArticlePage> {
           IconButton(
               onPressed: () {},
               icon: Icon(
-                Icons.bookmark,
+                Icons.bookmark_add,
                 color: Sec_Color,
               ))
         ],
@@ -88,14 +88,12 @@ class _ArticlePageState extends State<ArticlePage> {
             Padding(
                 padding: EdgeInsets.all(20),
                 child: Text(
-                  "Programming, often referred to as the art and science of instructing computers, has become an integral part of our modern world. From the software that powers our smartphones to the algorithms behind search engines, programming is the driving force that shapes our digital landscape. In this article, we'll delve into the world of programming, exploring its history, significance, and the essential skills needed to excel in this ever-evolving field.\The Evolution of Programming Programming has come a long way since its inception. In the early days of computing, programmers had to work directly with machine code, a series of binary instructions that computers could understand. This was a painstaking and error-prone process, as a single mistake could result in a system crash. As the field progressed, assembly languages and higher-level programming languages were developed to make the process more manageable and efficient.One significant milestone was the creation of FORTRAN (Formula Translation) in the 1950s, which was one of the first high-level programming languages. It allowed programmers to write code using more human-readable instructions, paving the way for greater accessibility and productivity in software development.",
-                  style: TextStyle(
-                    fontSize: 14,
-                    letterSpacing: 2,
-                    wordSpacing: 2,
-                    fontFamily: 'nunito',
-                  ),
-                ))
+                    "Programming, often referred to as the art and science of instructing computers, has become an integral part of our modern world. From the software that powers our smartphones to the algorithms behind search engines, programming is the driving force that shapes our digital landscape. In this article, we'll delve into the world of programming, exploring its history, significance, and the essential skills needed to excel in this ever-evolving field.\The Evolution of Programming Programming has come a long way since its inception. In the early days of computing, programmers had to work directly with machine code, a series of binary instructions that computers could understand. This was a painstaking and error-prone process, as a single mistake could result in a system crash. As the field progressed, assembly languages and higher-level programming languages were developed to make the process more manageable and efficient.One significant milestone was the creation of FORTRAN (Formula Translation) in the 1950s, which was one of the first high-level programming languages. It allowed programmers to write code using more human-readable instructions, paving the way for greater accessibility and productivity in software development.",
+                    style: TextStyle(
+                        fontFamily: "Nunito",
+                        letterSpacing: 1,
+                        fontSize: 11,
+                        wordSpacing: 3)))
           ],
         ),
       ),
