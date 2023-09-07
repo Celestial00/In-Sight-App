@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:insight/views/Article_Page.dart';
 
 class Article_Button extends StatelessWidget {
   const Article_Button({super.key});
@@ -7,7 +8,8 @@ class Article_Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print("clicked");
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => ArticlePage()));
       },
       child: Padding(
         padding: EdgeInsets.only(left: 10, top: 10),
