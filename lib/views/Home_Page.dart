@@ -66,51 +66,53 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 40, top: 20),
-                      child: Column(
-                        children: [
-                          Text(
-                            "20",
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontFamily: 'Nunito',
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                          Text("Followers",
+                Padding(
+                  padding: EdgeInsets.only(bottom: 20),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 40, top: 20),
+                        child: Column(
+                          children: [
+                            Text(
+                              "20",
                               style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 16,
                                   fontFamily: 'Nunito',
-                                  color: Colors.white))
-                        ],
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                            Text("Followers",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: 'Nunito',
+                                    color: Colors.white))
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 40, top: 20),
-                      child: Column(
-                        children: [
-                          Text(
-                            "20",
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontFamily: 'Nunito',
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                          Text("Following",
+                      Padding(
+                        padding: EdgeInsets.only(left: 40, top: 20),
+                        child: Column(
+                          children: [
+                            Text(
+                              "20",
                               style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 16,
                                   fontFamily: 'Nunito',
-                                  color: Colors.white))
-                        ],
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                            Text("Following",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: 'Nunito',
+                                    color: Colors.white))
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-                Divider(),
                 Padding(
                   padding: EdgeInsets.only(left: 30),
                   child: ListTile(

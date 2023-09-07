@@ -42,6 +42,9 @@ class _ArticlePageState extends State<ArticlePage> {
                 "The Art and Science of Programming: Crafting Digital Magic",
                 style: TextStyle(
                     fontSize: 20,
+                    letterSpacing: 1,
+                    height: 1.5,
+                    wordSpacing: 3,
                     fontFamily: 'nunito',
                     fontWeight: FontWeight.bold),
               ),
@@ -92,8 +95,9 @@ class _ArticlePageState extends State<ArticlePage> {
                     style: TextStyle(
                         fontFamily: "Nunito",
                         letterSpacing: 1,
-                        fontSize: 11,
-                        wordSpacing: 3)))
+                        height: 1.5,
+                        fontSize: 14,
+                        wordSpacing: 3))),
           ],
         ),
       ),
