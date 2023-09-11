@@ -45,7 +45,7 @@ class _ArticlePageState extends State<ArticlePage> {
                     letterSpacing: 1,
                     height: 1.5,
                     wordSpacing: 3,
-                    fontFamily: 'nunito',
+                    fontFamily: "Nunito",
                     fontWeight: FontWeight.bold),
               ),
             ),
@@ -71,7 +71,7 @@ class _ArticlePageState extends State<ArticlePage> {
                             "name",
                             style: TextStyle(
                               fontSize: 12,
-                              fontFamily: 'nunito',
+                              fontFamily: "Nunito",
                             ),
                           ))
                     ],
@@ -83,7 +83,7 @@ class _ArticlePageState extends State<ArticlePage> {
                       "2 hr",
                       style: TextStyle(
                         fontSize: 12,
-                        fontFamily: 'nunito',
+                        fontFamily: "Nunito",
                       ),
                     ))
               ],

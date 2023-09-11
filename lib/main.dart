@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:insight/Constants/Color.dart';
+import 'package:insight/views/Article_Editor.dart';
 import 'package:insight/views/Home_Page.dart';
+import 'package:insight/views/Saved_Articles.dart';
 import 'package:insight/views/Search%20_Page.dart';
 import 'package:insight/views/Settings_Page.dart';
 import 'package:insight/views/auth/Sign_Up.dart';
@@ -19,7 +21,12 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _index = 0;
-  final List PageList = [HomePage(), const SearchPage(), const SettingsPage()];
+  final List PageList = [
+    const HomePage(),
+    const SearchPage(),
+    const SavedArticlePage(),
+    const SettingsPage()
+  ];
   bool isSignedIn = false;
 
   void ChangePage(int index) {
@@ -74,3 +81,5 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
+// PageList[_index]

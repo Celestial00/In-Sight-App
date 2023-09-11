@@ -19,17 +19,9 @@ class _SettingsPageState extends State<SettingsPage> {
         backgroundColor: Colors.white,
         title: Text(
           "Settings",
-          style: TextStyle(
-              fontFamily: 'Nunitor',
-              fontSize: 14,
-              letterSpacing: 2,
-              color: Sec_Color),
+          style: TextStyle(color: Sec_Color, fontFamily: "Nunito"),
         ),
         elevation: 0,
-        leading: Icon(
-          Icons.arrow_back_ios,
-          color: Sec_Color,
-        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -41,10 +33,9 @@ class _SettingsPageState extends State<SettingsPage> {
               child: Text(
                 "Account",
                 style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: 'nunito',
-                ),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: "Nunito"),
               ),
             ),
             SettingsTile(
@@ -63,7 +54,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
-                  fontFamily: 'nunito',
+                  fontFamily: "Nunito",
                 ),
               ),
             ),
@@ -81,10 +72,9 @@ class _SettingsPageState extends State<SettingsPage> {
               child: Text(
                 "Account",
                 style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: 'nunito',
-                ),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: "Nunito"),
               ),
             ),
             SettingsTile(

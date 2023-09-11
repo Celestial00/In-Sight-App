@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:insight/Constants/Color.dart';
 import 'package:insight/components/Tags_line.dart';
+import 'package:insight/views/Article_Editor.dart';
 import '../components/Article_Card.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,7 +21,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         key: _ScaffoldKey,
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(
+
+              MaterialPageRoute(builder: (context) => ArticleEditor())
+
+            );
+          },
           backgroundColor: Sec_Color,
           child: Icon(
             Icons.add,
