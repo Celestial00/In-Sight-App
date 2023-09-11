@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:insight/Constants/Color.dart';
 import 'package:insight/components/Tags_line.dart';
 import 'package:insight/views/Article_Editor.dart';
+import 'package:insight/views/Saved_Articles.dart';
 import '../components/Article_Card.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,11 +23,8 @@ class _HomePageState extends State<HomePage> {
         key: _ScaffoldKey,
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Navigator.of(context).push(
-
-              MaterialPageRoute(builder: (context) => ArticleEditor())
-
-            );
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => ArticleEditor()));
           },
           backgroundColor: Sec_Color,
           child: Icon(
@@ -120,71 +118,69 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 30),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.add,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      "Add Articles",
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'Nunito',
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 30),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.article,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      "Your Articles",
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'Nunito',
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ArticleEditor()));
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 30),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        "Add Articles",
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Nunito',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 30),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.subscriptions,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      "Subscriptions",
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'Nunito',
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => SavedArticlePage()));
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 30),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.article,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        "Your Articles",
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Nunito',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 30),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.logout,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      "Log Out",
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'Nunito',
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                GestureDetector(
+                  onTap: () {},
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 30),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.logout,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        "Log Out",
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Nunito',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
                     ),
                   ),
                 ),

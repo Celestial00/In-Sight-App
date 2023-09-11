@@ -1,7 +1,4 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:insight/Constants/Color.dart';
 
 class BookMarkCard extends StatelessWidget {
   const BookMarkCard({super.key});
@@ -9,7 +6,7 @@ class BookMarkCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       child: Container(
         width: 450,
         height: 120,
@@ -37,7 +34,7 @@ class BookMarkCard extends StatelessWidget {
                   ),
                   Text(
                     "Name",
-                    style: TextStyle(fontFamily: 'nunito', fontSize: 12),
+                    style: TextStyle(fontFamily: 'Nunito', fontSize: 12),
                   )
                 ],
               ),
@@ -50,7 +47,7 @@ class BookMarkCard extends StatelessWidget {
                       letterSpacing: 1,
                       height: 1.5,
                       wordSpacing: 3,
-                      fontFamily: 'nunito',
+                      fontFamily: 'Nunito',
                       fontWeight: FontWeight.bold),
                 ),
               ),

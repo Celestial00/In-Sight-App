@@ -9,6 +9,7 @@ class Tags_line extends StatefulWidget {
 
 class _Tags_lineState extends State<Tags_line> {
   List Tags = [
+    "All",
     "Programming",
     "Facts",
     "Education",

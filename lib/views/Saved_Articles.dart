@@ -13,6 +13,7 @@ class _SavedArticlePageState extends State<SavedArticlePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
           "Your Library ",
@@ -24,7 +25,7 @@ class _SavedArticlePageState extends State<SavedArticlePage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
           child: Column(
             children: [
               BookMarkCard(),

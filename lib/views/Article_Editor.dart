@@ -1,5 +1,3 @@
-import 'dart:js_interop';
-
 import 'package:flutter/material.dart';
 import 'package:insight/Constants/Color.dart';
 
@@ -12,7 +10,6 @@ class ArticleEditor extends StatefulWidget {
 
 class _ArticleEditorState extends State<ArticleEditor> {
   bool titleIsEmpty = true;
-  TextEditingController _TitleController = TextEditingController();
 
   void checkTitle(String value) {
     if (value == "") {
@@ -29,6 +26,7 @@ class _ArticleEditorState extends State<ArticleEditor> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
@@ -67,11 +65,10 @@ class _ArticleEditorState extends State<ArticleEditor> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           child: Column(
             children: [
               TextFormField(
-                controller: _TitleController,
                 decoration: InputDecoration(
                   hintText: "Title",
                   hintStyle: TextStyle(fontSize: 32.0),

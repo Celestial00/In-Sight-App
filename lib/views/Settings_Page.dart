@@ -34,57 +34,66 @@ class _SettingsPageState extends State<SettingsPage> {
                 "Account",
                 style: TextStyle(
                     fontSize: 15,
-                    fontWeight: FontWeight.w500,
+                   
                     fontFamily: "Nunito"),
               ),
             ),
             SettingsTile(
               Wdth: MediaQuery.of(context).size.width,
+              title: "Join Premium",
             ),
             SettingsTile(
               Wdth: MediaQuery.of(context).size.width,
+              title: "Account Stats",
             ),
             SettingsTile(
               Wdth: MediaQuery.of(context).size.width,
+              title: "Account Settings",
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Text(
-                "Account",
+                "Configure In-sight",
                 style: TextStyle(
                   fontSize: 15,
-                  fontWeight: FontWeight.w500,
+                 
                   fontFamily: "Nunito",
                 ),
               ),
             ),
             SettingsTile(
               Wdth: MediaQuery.of(context).size.width,
+              title: "Theme",
             ),
             SettingsTile(
               Wdth: MediaQuery.of(context).size.width,
+              title: "Push",
             ),
             SettingsTile(
               Wdth: MediaQuery.of(context).size.width,
+              title: "Email notifications",
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Text(
-                "Account",
+                "About In-sight",
                 style: TextStyle(
                     fontSize: 15,
-                    fontWeight: FontWeight.w500,
+                   
                     fontFamily: "Nunito"),
               ),
             ),
             SettingsTile(
               Wdth: MediaQuery.of(context).size.width,
+              title: "Help",
             ),
             SettingsTile(
               Wdth: MediaQuery.of(context).size.width,
+              title: "Terms of service",
             ),
             SettingsTile(
               Wdth: MediaQuery.of(context).size.width,
+              title: "Privacy policy",
             ),
           ],
         ),
