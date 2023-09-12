@@ -42,11 +42,11 @@ class _MyAppState extends State<MyApp> {
         bottomNavigationBar: BottomNavigationBar(
             onTap: ChangePage,
             currentIndex: _index,
+            type: BottomNavigationBarType.fixed,
             selectedItemColor: Colors.orange,
             unselectedItemColor: Colors.grey[600],
             showSelectedLabels: false,
             showUnselectedLabels: false,
-            backgroundColor: const Color(0xff0c0f14),
             elevation: 0,
             items: const [
               BottomNavigationBarItem(
@@ -64,7 +64,7 @@ class _MyAppState extends State<MyApp> {
                   label: ''),
               BottomNavigationBarItem(
                   icon: Icon(
-                    Icons.bookmark_add,
+                    Icons.bookmark,
                     color: Sec_Color,
                   ),
                   label: ''),
