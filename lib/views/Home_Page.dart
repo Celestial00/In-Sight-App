@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: EdgeInsets.only(bottom: 20),
                   child: Row(
-                    children: [
+                    children: const [
                       Padding(
                         padding: EdgeInsets.only(left: 40, top: 20),
                         child: Column(
@@ -186,11 +186,11 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             )),
-        backgroundColor: BackGround_Color,
+        backgroundColor: Colors.white,
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
-              backgroundColor: BackGround_Color,
+              backgroundColor: Colors.white,
               leading: IconButton(
                   onPressed: () {
                     _ScaffoldKey.currentState!.openDrawer();
@@ -228,7 +228,7 @@ class _HomePageState extends State<HomePage> {
             SliverToBoxAdapter(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   Padding(
                     padding: EdgeInsets.only(left: 25, bottom: 10, top: 10),
                     child: Text(

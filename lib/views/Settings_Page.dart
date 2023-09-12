@@ -17,7 +17,7 @@ class _SettingsPageState extends State<SettingsPage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           "Settings",
           style: TextStyle(color: Sec_Color, fontFamily: "Nunito"),
         ),
@@ -28,14 +28,11 @@ class _SettingsPageState extends State<SettingsPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Text(
                 "Account",
-                style: TextStyle(
-                    fontSize: 15,
-                   
-                    fontFamily: "Nunito"),
+                style: TextStyle(fontSize: 15, fontFamily: "Nunito"),
               ),
             ),
             SettingsTile(
@@ -50,13 +47,12 @@ class _SettingsPageState extends State<SettingsPage> {
               Wdth: MediaQuery.of(context).size.width,
               title: "Account Settings",
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Text(
                 "Configure In-sight",
                 style: TextStyle(
                   fontSize: 15,
-                 
                   fontFamily: "Nunito",
                 ),
               ),
@@ -73,14 +69,11 @@ class _SettingsPageState extends State<SettingsPage> {
               Wdth: MediaQuery.of(context).size.width,
               title: "Email notifications",
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Text(
                 "About In-sight",
-                style: TextStyle(
-                    fontSize: 15,
-                   
-                    fontFamily: "Nunito"),
+                style: TextStyle(fontSize: 15, fontFamily: "Nunito"),
               ),
             ),
             SettingsTile(

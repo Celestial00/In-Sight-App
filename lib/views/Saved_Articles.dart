@@ -15,7 +15,7 @@ class _SavedArticlePageState extends State<SavedArticlePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Your Library ",
           style:
               TextStyle(fontFamily: "Nunito", fontSize: 22, color: Sec_Color),
@@ -23,7 +23,7 @@ class _SavedArticlePageState extends State<SavedArticlePage> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
           child: Column(

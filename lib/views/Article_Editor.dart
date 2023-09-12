@@ -32,7 +32,7 @@ class _ArticleEditorState extends State<ArticleEditor> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.close,
             color: Sec_Color,
           ),
@@ -41,7 +41,7 @@ class _ArticleEditorState extends State<ArticleEditor> {
         elevation: 0,
         actions: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: GestureDetector(
               onTap: () {},
               child: Container(
@@ -52,7 +52,7 @@ class _ArticleEditorState extends State<ArticleEditor> {
                     color: titleIsEmpty == true
                         ? Colors.grey.shade500
                         : Sec_Color),
-                child: Center(
+                child: const Center(
                   child: Text(
                     "Post",
                     style: TextStyle(fontFamily: 'Nunito'),
@@ -65,35 +65,37 @@ class _ArticleEditorState extends State<ArticleEditor> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Column(
             children: [
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Title",
-                  hintStyle: TextStyle(fontSize: 32.0),
+                  hintStyle: TextStyle(fontSize: 30.0),
                   focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.white)),
                   enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.white)),
                 ),
                 cursorColor: Sec_Color,
-                style: TextStyle(fontSize: 32.0, fontFamily: "Nunito"),
+                style: const TextStyle(fontSize: 30.0, fontFamily: "Nunito"),
                 onChanged: (value) {
                   checkTitle(value);
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(
+                minLines: 5,
+                maxLines: 100,
+                decoration: const InputDecoration(
                   hintText: "Content",
-                  hintStyle: TextStyle(fontSize: 16.0, fontFamily: "Nunito"),
+                  hintStyle: TextStyle(fontSize: 18.0, fontFamily: "Nunito"),
                   focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.white)),
                   enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.white)),
                 ),
                 cursorColor: Sec_Color,
-                style: TextStyle(fontSize: 16.0, fontFamily: "Nunito"),
+                style: const TextStyle(fontSize: 18.0, fontFamily: "Nunito"),
               )
             ],
           ),

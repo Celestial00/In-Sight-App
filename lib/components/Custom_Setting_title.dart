@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:insight/Constants/Color.dart';
 
 class SettingsTile extends StatelessWidget {
   double Wdth;
@@ -9,7 +8,7 @@ class SettingsTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       width: Wdth,
       height: 50,
       decoration: BoxDecoration(

@@ -10,7 +10,7 @@ class Custom_Button extends StatelessWidget {
   final Color btn_color;
   final String pre_icon;
   final bool isIcon;
-  Custom_Button(
+  const Custom_Button(
       {required this.text,
       required this.onPressed,
       super.key,
@@ -40,12 +40,11 @@ class Custom_Button extends StatelessWidget {
               children: [
                 isIcon
                     ? Image.asset(
-                  pre_icon, 
-                  width: 20, 
-                )
+                        pre_icon,
+                        width: 20,
+                      )
                     : Container(),
-                
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 Ubuntu_Style_Text(text: text, fontSize: 18, color: text_color),

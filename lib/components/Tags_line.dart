@@ -30,8 +30,8 @@ class _Tags_lineState extends State<Tags_line> {
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return Padding(
-                padding:
-                    EdgeInsets.only(top: 10, bottom: 10, left: 25, right: 0),
+                padding: const EdgeInsets.only(
+                    top: 10, bottom: 10, left: 25, right: 0),
                 child: GestureDetector(
                   onTap: () {
                     setState(() {

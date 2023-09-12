@@ -9,16 +9,16 @@ class Article_Button extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => ArticlePage()));
+            .push(MaterialPageRoute(builder: (context) => const ArticlePage()));
       },
       child: Padding(
-        padding: EdgeInsets.only(left: 10, top: 10),
+        padding: const EdgeInsets.only(left: 10, top: 10),
         child: Container(
           width: 430,
           height: 40,
           decoration: BoxDecoration(
               color: Colors.black, borderRadius: BorderRadius.circular(10)),
-          child: Center(
+          child: const Center(
             child: Text(
               "Read More",
               style: TextStyle(
