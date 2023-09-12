@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:insight/Constants/Color.dart';
-import 'package:insight/views/Article_Editor.dart';
 import 'package:insight/views/Home_Page.dart';
 import 'package:insight/views/Saved_Articles.dart';
 import 'package:insight/views/Search%20_Page.dart';
