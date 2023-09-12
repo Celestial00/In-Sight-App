@@ -58,7 +58,7 @@ class _SearchPageState extends State<SearchPage> {
                   width: 29,
                 ),
                 Container(
-                  width: 350,
+                  width: 270,
                   height: 0.8,
                   decoration: BoxDecoration(color: Colors.grey.shade500),
                 )
