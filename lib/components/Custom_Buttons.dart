@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:insight/Constants/Color.dart';
-import 'package:insight/Constants/Fonts_Style.dart';
 
 class Custom_Button extends StatelessWidget {
   final String text;
@@ -10,28 +8,46 @@ class Custom_Button extends StatelessWidget {
   final Color btn_color;
   final String pre_icon;
   final bool isIcon;
-  Custom_Button(
-      {required this.text,
-      required this.onPressed,
-      super.key,
-      this.text_color = Colors.white,
-      this.btn_color = Colors.white,
-      this.pre_icon = "",
-      this.isIcon = false});
+
+  Custom_Button({
+    required this.text,
+    required this.onPressed,
+    this.text_color = Colors.white,
+    this.btn_color = Colors.white,
+    this.pre_icon = "",
+    this.isIcon = false,
+  });
+
+  double _textSize(BuildContext context, double size) {
+    // Calculate responsive text size based on screen width
+    double screenWidth = MediaQuery.of(context).size.width;
+    return size *
+        screenWidth /
+        375; // Adjust 375 as per your design reference width
+  }
+
+  double _paddingSize(BuildContext context, double size) {
+    // Calculate responsive padding based on screen width
+    double screenWidth = MediaQuery.of(context).size.width;
+    return size *
+        screenWidth /
+        375; // Adjust 375 as per your design reference width
+  }
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: EdgeInsets.symmetric(horizontal: _paddingSize(context, 20)),
       child: InkWell(
         onTap: onPressed,
         child: Container(
           width: double.infinity,
-          height: 55,
+          height: _paddingSize(context, 55),
           decoration: BoxDecoration(
             color: btn_color,
-            borderRadius: BorderRadius.circular(30),
-            border: Border.all(color: Sec_Color, width: 2),
+            borderRadius: BorderRadius.circular(_paddingSize(context, 30)),
+            border:
+                Border.all(color: Sec_Color, width: _paddingSize(context, 2)),
           ),
           child: Center(
             child: Row(
@@ -40,15 +56,20 @@ class Custom_Button extends StatelessWidget {
               children: [
                 isIcon
                     ? Image.asset(
-                  pre_icon, 
-                  width: 20, 
-                )
+                        pre_icon,
+                        width: _paddingSize(context, 20),
+                      )
                     : Container(),
-                
                 SizedBox(
-                  width: 20,
+                  width: _paddingSize(context, 20),
                 ),
-                Ubuntu_Style_Text(text: text, fontSize: 18, color: text_color),
+                Text(
+                  text,
+                  style: TextStyle(
+                    fontSize: _textSize(context, 18),
+                    color: text_color,
+                  ),
+                ),
               ],
             ),
           ),
@@ -57,17 +78,3 @@ class Custom_Button extends StatelessWidget {
     );
   }
 }
-
-// class Google_SignUp_Button extends StatefulWidget {
-//   const Google_SignUp_Button({super.key});
-
-//   @override
-//   State<Google_SignUp_Button> createState() => _Google_SignUp_ButtonState();
-// }
-
-// class _Google_SignUp_ButtonState extends State<Google_SignUp_Button> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return 
-//   }
-// }

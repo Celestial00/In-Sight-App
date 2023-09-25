@@ -1,14 +1,49 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:insight/Constants/Color.dart';
+import 'package:insight/models/Post.dart';
+import 'package:insight/services/Post_Service.dart';
 
 class ArticlePage extends StatefulWidget {
-  const ArticlePage({super.key});
+  ArticlePage(
+      {required this.title,
+      required this.content,
+      required this.tag,
+      required this.onBookmark,
+      required this.isBookmarked,
+      required this.id});
+
+  String title;
+  String content;
+  String tag;
+  VoidCallback onBookmark;
+  bool isBookmarked;
+  String id;
 
   @override
   State<ArticlePage> createState() => _ArticlePageState();
 }
 
 class _ArticlePageState extends State<ArticlePage> {
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+//make a firebase collection for bookmarks
+
+
+
+  PostService postService = PostService();
+
+
+
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,10 +60,22 @@ class _ArticlePageState extends State<ArticlePage> {
             )),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  widget.isBookmarked = !widget.isBookmarked;
+                  if (widget.isBookmarked) {
+                    // make add article to bookmarks colection here
+                    postService.addBookmark(widget.id);
+                  } else {
+                    // Remove the article from bookmarks
+                    postService.removeBookmark(widget.id);
+                  }
+                });
+                widget.onBookmark();
+              },
               icon: Icon(
-                Icons.bookmark_add,
-                color: Sec_Color,
+                widget.isBookmarked ? Icons.bookmark : Icons.bookmark_border,
+                color: widget.isBookmarked ? Colors.orange : Sec_Color,
               ))
         ],
         elevation: 0,
@@ -39,7 +86,7 @@ class _ArticlePageState extends State<ArticlePage> {
             Padding(
               padding: EdgeInsets.all(20),
               child: Text(
-                "The Art and Science of Programming: Crafting Digital Magic",
+                widget.title,
                 style: TextStyle(
                     fontSize: 20,
                     letterSpacing: 1,
@@ -90,8 +137,7 @@ class _ArticlePageState extends State<ArticlePage> {
             ),
             Padding(
                 padding: EdgeInsets.all(20),
-                child: Text(
-                    "Programming, often referred to as the art and science of instructing computers, has become an integral part of our modern world. From the software that powers our smartphones to the algorithms behind search engines, programming is the driving force that shapes our digital landscape. In this article, we'll delve into the world of programming, exploring its history, significance, and the essential skills needed to excel in this ever-evolving field.\The Evolution of Programming Programming has come a long way since its inception. In the early days of computing, programmers had to work directly with machine code, a series of binary instructions that computers could understand. This was a painstaking and error-prone process, as a single mistake could result in a system crash. As the field progressed, assembly languages and higher-level programming languages were developed to make the process more manageable and efficient.One significant milestone was the creation of FORTRAN (Formula Translation) in the 1950s, which was one of the first high-level programming languages. It allowed programmers to write code using more human-readable instructions, paving the way for greater accessibility and productivity in software development.",
+                child: Text(widget.content,
                     style: TextStyle(
                         fontFamily: "Nunito",
                         letterSpacing: 1,

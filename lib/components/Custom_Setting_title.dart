@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:insight/Constants/Color.dart';
 
+// ignore: must_be_immutable
 class SettingsTile extends StatelessWidget {
   double Wdth;
-  SettingsTile({super.key, required this.Wdth});
+  String title;
+  SettingsTile({ required this.Wdth, required this.title});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       width: Wdth,
       height: 50,
       decoration: BoxDecoration(
-          color: Colors.black26,
-          border:
-              Border(bottom: BorderSide(color: Colors.black12, width: 2.0))),
-      child: Text("somethings"),
+          color: Colors.grey.shade200,
+          border: Border(
+              bottom: BorderSide(color: Colors.grey.shade300, width: 2.0))),
+      child: Text(title),
     );
   }
 }

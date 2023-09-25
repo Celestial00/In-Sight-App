@@ -2,13 +2,14 @@
 /*
 i want to build the profile screen same as the Medium app
 */
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:insight/Constants/Color.dart';
 import 'package:insight/Constants/Fonts_Style.dart';
 import 'package:insight/components/Article_Card.dart';
 
 class Profile_Screen extends StatefulWidget {
-  const Profile_Screen({super.key});
+ 
 
   @override
   State<Profile_Screen> createState() => _Profile_ScreenState();
@@ -106,7 +107,7 @@ class _Profile_ScreenState extends State<Profile_Screen> {
             SizedBox(
               height: 20,
             ),
-            ArticleCard(),
+            // ArticleCard(title: "title", content: "Content", timestamp: Timestamp.now(), name: "", profilepicture: "assets/dp.jpg", tag: "tag",),
             
           ],
         ),

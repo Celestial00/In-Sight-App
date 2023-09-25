@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:insight/Constants/Color.dart';
 
 class Ubuntu_Style_Text extends StatelessWidget {
   final String text;
@@ -20,4 +19,16 @@ class Ubuntu_Style_Text extends StatelessWidget {
       ),
     );
   }
+}
+
+
+Widget Oxygen_Style_Text(String text, double fontSize, Color color, FontWeight fontWeight ) {
+  return Text(
+    text,
+    style: GoogleFonts.oxygen(
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      color: color,
+    ),
+  );
 }

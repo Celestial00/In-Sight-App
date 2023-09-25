@@ -3,7 +3,6 @@ import 'package:insight/Constants/Color.dart';
 import 'package:insight/components/Custom_Setting_title.dart';
 
 class SettingsPage extends StatefulWidget {
-  const SettingsPage({super.key});
 
   @override
   State<SettingsPage> createState() => _SettingsPageState();
@@ -17,84 +16,76 @@ class _SettingsPageState extends State<SettingsPage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           "Settings",
-          style: TextStyle(
-              fontFamily: 'Nunitor',
-              fontSize: 14,
-              letterSpacing: 2,
-              color: Sec_Color),
+          style: TextStyle(color: Sec_Color, fontFamily: "Nunito"),
         ),
         elevation: 0,
-        leading: Icon(
-          Icons.arrow_back_ios,
-          color: Sec_Color,
-        ),
       ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Text(
                 "Account",
+                style: TextStyle(fontSize: 15, fontFamily: "Nunito"),
+              ),
+            ),
+            SettingsTile(
+              Wdth: MediaQuery.of(context).size.width,
+              title: "Join Premium",
+            ),
+            SettingsTile(
+              Wdth: MediaQuery.of(context).size.width,
+              title: "Account Stats",
+            ),
+            SettingsTile(
+              Wdth: MediaQuery.of(context).size.width,
+              title: "Account Settings",
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Text(
+                "Configure In-sight",
                 style: TextStyle(
                   fontSize: 15,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: 'nunito',
+                  fontFamily: "Nunito",
                 ),
               ),
             ),
             SettingsTile(
               Wdth: MediaQuery.of(context).size.width,
+              title: "Theme",
             ),
             SettingsTile(
               Wdth: MediaQuery.of(context).size.width,
+              title: "Push",
             ),
             SettingsTile(
               Wdth: MediaQuery.of(context).size.width,
+              title: "Email notifications",
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Text(
-                "Account",
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: 'nunito',
-                ),
+                "About In-sight",
+                style: TextStyle(fontSize: 15, fontFamily: "Nunito"),
               ),
             ),
             SettingsTile(
               Wdth: MediaQuery.of(context).size.width,
+              title: "Help",
             ),
             SettingsTile(
               Wdth: MediaQuery.of(context).size.width,
+              title: "Terms of service",
             ),
             SettingsTile(
               Wdth: MediaQuery.of(context).size.width,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Text(
-                "Account",
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: 'nunito',
-                ),
-              ),
-            ),
-            SettingsTile(
-              Wdth: MediaQuery.of(context).size.width,
-            ),
-            SettingsTile(
-              Wdth: MediaQuery.of(context).size.width,
-            ),
-            SettingsTile(
-              Wdth: MediaQuery.of(context).size.width,
+              title: "Privacy policy",
             ),
           ],
         ),

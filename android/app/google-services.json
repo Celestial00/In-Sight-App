@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "955122467473",
+    "project_id": "in-sight-app",
+    "storage_bucket": "in-sight-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955122467473:android:faeb26b3281eaeda86f530",
+        "android_client_info": {
+          "package_name": "com.example.insight"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOSv2el-15LqusmNr-IJQytC3GcpgqyCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

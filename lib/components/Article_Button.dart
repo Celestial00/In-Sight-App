@@ -1,34 +1,25 @@
-import 'package:flutter/material.dart';
-import 'package:insight/views/Article_Page.dart';
+// import 'package:flutter/material.dart';
+// import 'package:insight/views/Article_Page.dart';
 
-class Article_Button extends StatelessWidget {
-  const Article_Button({super.key});
+// class Article_Button extends StatelessWidget {
+//   double _textSize(BuildContext context, double size) {
+//     // Calculate responsive text size based on screen width
+//     double screenWidth = MediaQuery.of(context).size.width;
+//     return size *
+//         screenWidth /
+//         375; // Adjust 375 as per your design reference width
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => ArticlePage()));
-      },
-      child: Padding(
-        padding: EdgeInsets.only(left: 10, top: 10),
-        child: Container(
-          width: 430,
-          height: 40,
-          decoration: BoxDecoration(
-              color: Colors.black, borderRadius: BorderRadius.circular(10)),
-          child: Center(
-            child: Text(
-              "Read More",
-              style: TextStyle(
-                  fontFamily: "Nunito",
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   double _paddingSize(BuildContext context, double size) {
+//     // Calculate responsive padding based on screen width
+//     double screenWidth = MediaQuery.of(context).size.width;
+//     return size *
+//         screenWidth /
+//         375; // Adjust 375 as per your design reference width
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return 
+//   }
+// }
