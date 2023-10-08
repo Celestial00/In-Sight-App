@@ -1,4 +1,7 @@
+// ignore_for_file: non_constant_identifier_names
+
 import "package:flutter/material.dart";
+import "package:insight/views/BookMarkPage.dart";
 
 import "../Constants/Color.dart";
 import "Home_Page.dart";
@@ -16,7 +19,7 @@ class Main_Page extends StatefulWidget {
 class _Main_PageState extends State<Main_Page> {
 
 int _index = 0;
-  final List PageList = [HomePage(), SearchPage(), SavedArticlePage(),SettingsPage()];
+  final List PageList = [HomePage(), BookMarkPage(),SettingsPage()];
   bool isSignedIn = false;
 
   void ChangePage(int index) {
@@ -38,7 +41,7 @@ int _index = 0;
             unselectedItemColor: Colors.grey[600],
             showSelectedLabels: false,
             showUnselectedLabels: false,
-            backgroundColor: const Color(0xff0c0f14),
+            // backgroundColor: const Color(0xff0c0f14),
             elevation: 0,
             items: const [
               BottomNavigationBarItem(
@@ -48,12 +51,7 @@ int _index = 0;
                 ),
                 label: '',
               ),
-              BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.search,
-                    color: Sec_Color,
-                  ),
-                  label: ''),
+  
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.bookmark_add,

@@ -13,8 +13,7 @@ import '../services/shared_preferences_service.dart';
 class UserController {
   final AuthService _authService = AuthService();
   final UserProfileService _userProfileService = UserProfileService();
-  final Shared_Preferences_services shared_preferences_services =
-      Shared_Preferences_services();
+
 
   // Sign in with email and password
   Future<User?> signInWithEmailAndPassword(
@@ -44,11 +43,10 @@ class UserController {
         username: FullName,
         email: user.email!,
         profileImage: "assets/dp.jpg",
-        bio: '',
+        bio: ' ',
          
       );
-       await shared_preferences_services
-          .saveUserProfileToSharedPreferences(userProfile);
+     
      
       // Create the user profile in Firestore
       await _userProfileService.updateUserProfile(userProfile);

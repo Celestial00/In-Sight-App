@@ -155,63 +155,48 @@ class _HomePageState extends State<HomePage> {
                   height: 700,
                   color: BackGround_Color,
                   child: FutureBuilder<void>(
-                    future: postProvider.fetchPosts(),
-                    builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.waiting) {
-                        return Center(child: CircularProgressIndicator());
-                      } else if (snapshot.hasError) {
-                        return Center(child: Text('Error: ${snapshot.error}'));
-                      } else {
-                        return FutureBuilder<User?>(
-                            future: postProvider.fetchUserDetails(),
-                            builder: (context, userSnapshot) {
-                              if (userSnapshot.connectionState ==
-                                  ConnectionState.waiting) {
-                                return Center(
-                                    child: CircularProgressIndicator());
-                              } else if (userSnapshot.hasError) {
-                                return Center(
-                                    child:
-                                        Text('Error: ${userSnapshot.error}'));
-                              } else {
+                      future: postProvider.fetchPosts(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return Center(child: CircularProgressIndicator());
+                        } else if (snapshot.hasError) {
+                          return Center(
+                              child: Text('Error: ${snapshot.error}'));
+                        } else {
+                          return ListView.builder(
+                              shrinkWrap: true,
+                              itemCount: postProvider.posts.length,
+                              itemBuilder: (context, index) {
+                                print(postProvider.posts.length);
+
+                                final post = postProvider.posts[index];
+                                //  userid = post.uid;
                                 final user = userProvider.user;
-
-                                return ListView.builder(
-                                    shrinkWrap: true,
-                                    itemCount: postProvider.posts.length,
-                                    itemBuilder: (context, index) {
-                                      print(postProvider.posts.length);
-
-                                      final post = postProvider.posts[index];
-                                      //  userid = post.uid;
-                                      return ArticleCard(
-                                        title: post.title,
-                                        content: post.content,
-                                        timestamp: post.timestamp,
-                                        name: user?.username ??
-                                            user1.displayName!,
-                                        profilepicture: "assets/dp.jpg",
-                                        tag: "tag",
-                                        onReadMoreTap: () {
-                                          Get.to(() => ArticlePage(
-                                                title: post.title,
-                                                content: post.content,
-                                                tag: "flutter",
-                                                onBookmark: () {
-                                                  toggleBookmark(post.id);
-                                                },
-                                                isBookmarked: bookmarkedArticles
-                                                    .contains(post.id),
-                                                id: post.id,
-                                              ));
-                                        },
-                                      );
-                                    });
-                              }
-                            });
-                      }
-                    },
-                  ),
+                                return ArticleCard(
+                                  title: post.title,
+                                  content: post.content,
+                                  timestamp: post.timestamp,
+                                  name: user?.username ?? user1.displayName!,
+                                  profilepicture: "assets/dp.jpg",
+                                  tag: "tag",
+                                  onReadMoreTap: () {
+                                    Get.to(() => ArticlePage(
+                                          title: post.title,
+                                          content: post.content,
+                                          tag: "flutter",
+                                          onBookmark: () {
+                                            toggleBookmark(post.id);
+                                          },
+                                          isBookmarked: bookmarkedArticles
+                                              .contains(post.id),
+                                          id: post.id,
+                                        ));
+                                  },
+                                );
+                              });
+                        }
+                      }),
                 )
               ],
             ),

@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:insight/Constants/Color.dart';
 import 'package:insight/components/Book_Mark_Card.dart';
+import 'package:insight/models/Post.dart';
+import 'package:insight/providers/User_Provider.dart';
 import 'package:insight/services/Post_Service.dart';
 
 class SavedArticlePage extends StatefulWidget {
@@ -12,6 +14,7 @@ class SavedArticlePage extends StatefulWidget {
 class _SavedArticlePageState extends State<SavedArticlePage> {
   final User? currentUser = FirebaseAuth.instance.currentUser;
   PostService postService = PostService();
+  UserProvider userProvider = UserProvider();
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +29,11 @@ class _SavedArticlePageState extends State<SavedArticlePage> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      body: FutureBuilder<List>(
-        future: postService.getUserArticles(),
+      body: FutureBuilder<List<Map<String, dynamic>>>(
+        future: postService.getMyArticles(),
         builder: (context, snapshot) {
+           final user = userProvider.user;
+          print("snapshot" + snapshot.data.toString());
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
@@ -40,10 +45,11 @@ class _SavedArticlePageState extends State<SavedArticlePage> {
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
                 final article = snapshot.data![index];
+               
                 return BookMarkCard(
-                  name: currentUser!.displayName!,
+                  name: user?.username ?? "Name",
                   profilepicture: 'assets/dp.jpg',
-                  title: article["title"],
+                  title: article['title'],
                 );
               },
             );

@@ -31,7 +31,7 @@ class UserProfileService {
           username: data['username'],
           email: data['email'],
           profileImage: data['profileImage'],
-          bio: data['bio'],
+          bio: data['bio'] ?? " ",
         );
       }
       return null;
